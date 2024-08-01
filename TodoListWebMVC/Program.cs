@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TodoListWebMVC.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TodoListWebMVCContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoListWebMVCContext") ?? throw new InvalidOperationException("Connection string 'TodoListWebMVCContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
