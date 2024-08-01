@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 
 namespace TodoListWebMVC.Controllers
 {
@@ -19,9 +20,9 @@ namespace TodoListWebMVC.Controllers
         
 
         // GET: /Miaw/Anjay/ 
-        public string Anjay()
+        public string Anjay(string name = "miaw", int numTimes  = 1)
         {
-            return "This is the Anjay action method...";
+            return HtmlEncoder.Default.Encode($"You decided to say {name} {numTimes} times!");
         }
     }
 }
