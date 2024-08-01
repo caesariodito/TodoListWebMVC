@@ -13,9 +13,9 @@ namespace TodoListWebMVC.Controllers
         //}
                  
         // GET: /Miaw/
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
         }
         
 
