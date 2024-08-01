@@ -20,9 +20,11 @@ namespace TodoListWebMVC.Controllers
         
 
         // GET: /Miaw/Anjay/ 
-        public string Anjay(string name = "miaw", int numTimes  = 1)
+        public IActionResult Anjay(string name = "miaw", int numTimes  = 1)
         {
-            return HtmlEncoder.Default.Encode($"You decided to say {name} {numTimes} times!");
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+            return View();
         }
     }
 }
