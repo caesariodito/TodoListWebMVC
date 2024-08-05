@@ -14,5 +14,6 @@ namespace TodoListWebMVC.Models
         [Display(Name = "Edited At")]
         [DataType(DataType.Date)]
         public DateTime? EditedAt { get; set; }
+        public bool IsFinished { get; set; }
     }
 }

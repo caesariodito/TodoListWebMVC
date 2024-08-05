@@ -39,6 +39,11 @@
                 <span asp-validation-for="EditedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="IsFinished" class="control-label"></label>
+                <input asp-for="IsFinished" class="form-control" />
+                <span asp-validation-for="IsFinished" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
