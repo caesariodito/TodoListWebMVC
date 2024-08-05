@@ -6,6 +6,8 @@ namespace TodoListWebMVC.Models
     {
         public int Id { get; set; }
         public string? Name { get; set; }
+        public string? Category { get; set; }
+        public string? Description { get; set; }
         [Display(Name = "Created At")]
         [DataType(DataType.Date)]
         public DateTime? CreatedAt { get; set; }
