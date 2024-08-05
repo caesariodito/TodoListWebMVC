@@ -25,29 +25,37 @@ namespace TodoListWebMVC.Controllers
         //    return View(await _context.Todo.ToListAsync());
         //}
 
-        [HttpPost]
-        public string Index(string searchString, bool notUsed)
-        {
-            return "From [HttpPost]Index: filter on " + searchString;
-        }
-
-
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string todoCategory, string searchString)
         {
             if (_context.Todo == null)
             {
                 return Problem("Entity set 'TodoListWebMVCContext.Todo'  is null.");
             }
 
+            // Use LINQ to get list of categories.
+            IQueryable<string> categoryQuery = from t in _context.Todo
+                                               orderby t.Category
+                                               select t.Category;
             var todoes = from t in _context.Todo
                          select t;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 todoes = todoes.Where(s => s.Name!.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            return View(await todoes.ToListAsync());
+            if (!string.IsNullOrEmpty(todoCategory))
+            {
+                todoes = todoes.Where(x => x.Category == todoCategory);
+            }
+
+            var todoCategoryVM = new TodoCategoryViewModel
+            {
+                Categories = new SelectList(await categoryQuery.Distinct().ToListAsync()),
+                Todoes = await todoes.ToListAsync(),
+            };
+
+            return View(todoCategoryVM);
         }
 
         // GET: Todoes/Details/5
@@ -79,7 +87,7 @@ namespace TodoListWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreatedAt,EditedAt")] Todo todo)
+        public async Task<IActionResult> Create([Bind("Id,Name,Category,Description,CreatedAt,EditedAt")] Todo todo)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +119,7 @@ namespace TodoListWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreatedAt,EditedAt")] Todo todo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category,Description,CreatedAt,EditedAt")] Todo todo)
         {
             if (id != todo.Id)
             {
