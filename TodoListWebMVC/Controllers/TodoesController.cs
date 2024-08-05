@@ -20,9 +20,34 @@ namespace TodoListWebMVC.Controllers
         }
 
         // GET: Todoes
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Todo.ToListAsync());
+        //}
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
         {
-            return View(await _context.Todo.ToListAsync());
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
+
+        public async Task<IActionResult> Index(string searchString)
+        {
+            if (_context.Todo == null)
+            {
+                return Problem("Entity set 'TodoListWebMVCContext.Todo'  is null.");
+            }
+
+            var todoes = from t in _context.Todo
+                         select t;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                todoes = todoes.Where(s => s.Name!.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            return View(await todoes.ToListAsync());
         }
 
         // GET: Todoes/Details/5
