@@ -25,8 +25,8 @@ namespace TodoListWebMVC.Models
                         Name = "Miaw",
                         Category = "Cat",
                         Description = "A cat that meows",
-                        CreatedAt = DateTime.Parse("2021-08-01"),
-                        EditedAt = DateTime.Parse("2021-08-01"),
+                        //CreatedAt = DateTime.Parse("2021-08-01"),
+                        //EditedAt = DateTime.Parse("2021-08-01"),
                         IsFinished = false,
                     },
                     new Todo
@@ -34,8 +34,8 @@ namespace TodoListWebMVC.Models
                         Name = "MiawAWAW",
                         Category = "Cat",
                         Description = "A cat that meows a lot",
-                        CreatedAt = DateTime.Parse("2022-08-01"),
-                        EditedAt = DateTime.Parse("2022-08-01"),
+                        //CreatedAt = DateTime.Parse("2022-08-01"),
+                        //EditedAt = DateTime.Parse("2022-08-01"),
                         IsFinished = true,
                     },
                     new Todo
@@ -43,8 +43,8 @@ namespace TodoListWebMVC.Models
                         Name = "DAYM",
                         Category = "Human",
                         Description = "A human that says daym",
-                        CreatedAt = DateTime.Parse("2023-08-01"),
-                        EditedAt = DateTime.Parse("2023-08-01"),
+                        //CreatedAt = DateTime.Parse("2023-08-01"),
+                        //EditedAt = DateTime.Parse("2023-08-01"),
                         IsFinished = false,
                     },
                     new Todo
@@ -52,8 +52,8 @@ namespace TodoListWebMVC.Models
                         Name = "Holy sheeesh",
                         Category = "Human",
                         Description = "A human that says holy sheeesh",
-                        CreatedAt = DateTime.Parse("2024-08-01"),
-                        EditedAt = DateTime.Parse("2024-08-01"),
+                        //CreatedAt = DateTime.Parse("2024-08-01"),
+                        //EditedAt = DateTime.Parse("2024-08-01"),
                         IsFinished = true,
                     },
                     new Todo
@@ -61,8 +61,8 @@ namespace TodoListWebMVC.Models
                         Name = "Rawrrrrr",
                         Category = "Dinosaur",
                         Description = "A dinosaur that says rawrrrrr",
-                        CreatedAt = DateTime.Parse("2025-08-01"),
-                        EditedAt = DateTime.Parse("2025-08-02"),
+                        //CreatedAt = DateTime.Parse("2025-08-01"),
+                        //EditedAt = DateTime.Parse("2025-08-02"),
                         IsFinished = false,
                     },
                     new Todo
@@ -70,8 +70,8 @@ namespace TodoListWebMVC.Models
                         Name = "Rawrrrrr Miaw",
                         Category = "Fake Dinosaur",
                         Description = "A dinosaur that says rawrrrrr, but actually it is a cat",
-                        CreatedAt = DateTime.Parse("2025-08-01"),
-                        EditedAt = DateTime.Parse("2025-08-02"),
+                        //CreatedAt = DateTime.Parse("2025-08-01"),
+                        //EditedAt = DateTime.Parse("2025-08-02"),
                         IsFinished = false,
                     }
                 );

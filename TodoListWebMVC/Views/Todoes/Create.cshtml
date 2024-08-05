@@ -27,7 +27,7 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+@*             <div class="form-group">
                 <label asp-for="CreatedAt" class="control-label"></label>
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
@@ -36,10 +36,10 @@
                 <label asp-for="EditedAt" class="control-label"></label>
                 <input asp-for="EditedAt" class="form-control" />
                 <span asp-validation-for="EditedAt" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="IsFinished" class="control-label"></label>
-                <input asp-for="IsFinished" class="form-control" />
+                <input asp-for="IsFinished" class="form-check-input" type="checkbox" />
                 <span asp-validation-for="IsFinished" class="text-danger"></span>
             </div>
             <div class="form-group">

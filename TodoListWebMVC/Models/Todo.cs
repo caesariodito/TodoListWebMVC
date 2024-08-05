@@ -18,13 +18,13 @@ namespace TodoListWebMVC.Models
         [StringLength(120)]
         public string? Description { get; set; }
 
-        [Display(Name = "Created At")]
-        [DataType(DataType.Date)]
-        public DateTime? CreatedAt { get; set; }
+        //[Display(Name = "Created At")]
+        //[DataType(DataType.Date)]
+        //public DateTime? CreatedAt { get; set; }
 
-        [Display(Name = "Edited At")]
-        [DataType(DataType.Date)]
-        public DateTime? EditedAt { get; set; }
+        //[Display(Name = "Edited At")]
+        //[DataType(DataType.Date)]
+        //public DateTime? EditedAt { get; set; }
 
         public bool IsFinished { get; set; }
     }
