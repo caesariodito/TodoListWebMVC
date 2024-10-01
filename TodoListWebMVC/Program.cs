@@ -3,8 +3,12 @@ using Microsoft.Extensions.DependencyInjection;
 using TodoListWebMVC.Data;
 using TodoListWebMVC.Models;
 var builder = WebApplication.CreateBuilder(args);
+//builder.Services.AddDbContext<TodoListWebMVCContext>(options =>
+//    options.useMySQL(builder.Configuration.GetConnectionString("TodoListWebMVCContext") ?? throw new InvalidOperationException("Connection string 'TodoListWebMVCContext' not found.")));
+
 builder.Services.AddDbContext<TodoListWebMVCContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoListWebMVCContext") ?? throw new InvalidOperationException("Connection string 'TodoListWebMVCContext' not found.")));
+    options.UseMySql(builder.Configuration.GetConnectionString("TodoListWebMVCContext"),
+                     new MySqlServerVersion(new Version(8, 0, 25))));  // Specify MySQL version
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
