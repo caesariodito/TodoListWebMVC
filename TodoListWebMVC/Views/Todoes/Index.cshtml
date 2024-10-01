@@ -33,6 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Todoes![0].Description)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todoes![0].GoalToFinish)
+            </th>
 @*             <th>
                 @Html.DisplayNameFor(model => model.Todoes![0].CreatedAt)
             </th>
@@ -54,9 +57,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoalToFinish)
+            </td>
 @*             <td>
                 @Html.DisplayFor(modelItem => item.CreatedAt)
             </td>

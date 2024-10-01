@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TodoListWebMVC.Models.ValidationAttributes;
 
 namespace TodoListWebMVC.Models
 {
@@ -17,6 +18,11 @@ namespace TodoListWebMVC.Models
 
         [StringLength(120)]
         public string? Description { get; set; }
+
+        [DataType(DataType.Date)]
+        [FutureDate(ErrorMessage = "The Goal to finish date must be today or in the future.")]
+        [NotWeekend(ErrorMessage = "Can't be on weekend bro :(")]
+        public DateTime? GoalToFinish { get; set; }
 
         //[Display(Name = "Created At")]
         //[DataType(DataType.Date)]

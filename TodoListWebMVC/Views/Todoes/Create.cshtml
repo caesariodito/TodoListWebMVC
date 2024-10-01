@@ -27,6 +27,12 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="GoalToFinish" class="control-label"></label>
+                <input asp-for="GoalToFinish" class="form-control"
+                    type="date" min="@ViewBag.MinDate" value="@ViewBag.MinDate" />
+                <span asp-validation-for="GoalToFinish" class="text-danger"></span>
+            </div>
 @*             <div class="form-group">
                 <label asp-for="CreatedAt" class="control-label"></label>
                 <input asp-for="CreatedAt" class="form-control" />

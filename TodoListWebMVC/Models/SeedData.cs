@@ -25,54 +25,48 @@ namespace TodoListWebMVC.Models
                         Name = "Miaw",
                         Category = "Cat",
                         Description = "A cat that meows",
-                        //CreatedAt = DateTime.Parse("2021-08-01"),
-                        //EditedAt = DateTime.Parse("2021-08-01"),
                         IsFinished = false,
+                        GoalToFinish = DateTime.Parse("2021-09-01")
                     },
                     new Todo
                     {
                         Name = "MiawAWAW",
                         Category = "Cat",
                         Description = "A cat that meows a lot",
-                        //CreatedAt = DateTime.Parse("2022-08-01"),
-                        //EditedAt = DateTime.Parse("2022-08-01"),
                         IsFinished = true,
+                        GoalToFinish = DateTime.Parse("2022-09-01")
                     },
                     new Todo
                     {
                         Name = "DAYM",
                         Category = "Human",
                         Description = "A human that says daym",
-                        //CreatedAt = DateTime.Parse("2023-08-01"),
-                        //EditedAt = DateTime.Parse("2023-08-01"),
                         IsFinished = false,
+                        GoalToFinish = DateTime.Parse("2023-09-01")
                     },
                     new Todo
                     {
                         Name = "Holy sheeesh",
                         Category = "Human",
                         Description = "A human that says holy sheeesh",
-                        //CreatedAt = DateTime.Parse("2024-08-01"),
-                        //EditedAt = DateTime.Parse("2024-08-01"),
                         IsFinished = true,
+                        GoalToFinish = DateTime.Parse("2024-09-01")
                     },
                     new Todo
                     {
                         Name = "Rawrrrrr",
                         Category = "Dinosaur",
                         Description = "A dinosaur that says rawrrrrr",
-                        //CreatedAt = DateTime.Parse("2025-08-01"),
-                        //EditedAt = DateTime.Parse("2025-08-02"),
                         IsFinished = false,
+                        GoalToFinish = DateTime.Parse("2025-09-01")
                     },
                     new Todo
                     {
                         Name = "Rawrrrrr Miaw",
                         Category = "Fake Dinosaur",
                         Description = "A dinosaur that says rawrrrrr, but actually it is a cat",
-                        //CreatedAt = DateTime.Parse("2025-08-01"),
-                        //EditedAt = DateTime.Parse("2025-08-02"),
                         IsFinished = false,
+                        GoalToFinish = DateTime.Parse("2025-09-01")
                     }
                 );
                 context.SaveChanges();
